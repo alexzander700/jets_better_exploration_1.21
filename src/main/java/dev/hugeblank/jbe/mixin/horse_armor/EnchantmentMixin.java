@@ -4,7 +4,7 @@ import net.minecraft.enchantment.*;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.HorseEntity;
-import net.minecraft.item.HorseArmorItem;
+import net.minecraft.item.AnimalArmorItem;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -38,7 +38,7 @@ public class EnchantmentMixin {
 
     @Inject(at = @At("HEAD"), method = "isAcceptableItem(Lnet/minecraft/item/ItemStack;)Z", cancellable = true)
     private void jbe$modifyAcceptableTargets(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if (stack.getItem() instanceof HorseArmorItem) cir.setReturnValue(isHorseEnchantable);
+        if (stack.getItem() instanceof AnimalArmorItem) cir.setReturnValue(isHorseEnchantable);
     }
 
 }

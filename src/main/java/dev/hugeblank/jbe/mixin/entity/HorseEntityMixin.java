@@ -4,7 +4,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.HorseEntity;
-import net.minecraft.item.HorseArmorItem;
+import net.minecraft.item.AnimalArmorItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.sound.SoundEvents;
@@ -36,7 +36,7 @@ public abstract class HorseEntityMixin extends AbstractHorseEntityMixin{
                 amount = 1.0F;
             }
             ItemStack itemStack = this.items.getStack(1);
-            if ((!source.isIn(DamageTypeTags.IS_FIRE) || !itemStack.getItem().isFireproof()) && itemStack.getItem() instanceof HorseArmorItem) {
+            if ((!source.isIn(DamageTypeTags.IS_FIRE) || !itemStack.getItem().isFireproof()) && itemStack.getItem() instanceof AnimalArmorItem) {
                 itemStack.damage((int)amount, this, entity -> {
                     if (!entity.getWorld().isClient()) entity.playSound(SoundEvents.ENTITY_ITEM_BREAK, 1.0f, 1.0f);
                 });

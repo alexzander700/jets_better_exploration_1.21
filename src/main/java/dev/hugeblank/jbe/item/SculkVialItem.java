@@ -2,12 +2,12 @@ package dev.hugeblank.jbe.item;
 
 import dev.hugeblank.jbe.MainInit;
 import net.minecraft.block.MapColor;
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
@@ -106,7 +106,7 @@ public class SculkVialItem extends Item {
     }
 
     @Override
-    public void appendTooltip(ItemStack itemStack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+    public void appendTooltip(ItemStack itemStack, @Nullable World world, List<Text> tooltip, TooltipType context) {
         super.appendTooltip(itemStack, world, tooltip, context);
         NbtCompound nbt = itemStack.getNbt();
         if (nbt != null) {

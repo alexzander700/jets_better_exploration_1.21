@@ -20,7 +20,7 @@ import net.minecraft.block.PoweredRailBlock;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.boss.dragon.EnderDragonFight;
 import net.minecraft.item.*;
-import net.minecraft.item.map.MapIcon;
+import net.minecraft.item.map.MapDecoration;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKeys;
@@ -118,7 +118,7 @@ public class MainInit implements ModInitializer {
 		POWERED_RAIL = new PoweredRailBlock(FabricBlockSettings.copy(Blocks.POWERED_RAIL));
 
 		ON_ANCIENT_CITY_MAPS = TagKey.of(RegistryKeys.STRUCTURE, new Identifier("minecraft", "on_ancient_city_maps"));
-		SELL_ANCIENT_CITY_MAP_TRADE = new SellCustomMapTradeFactory(14, MainInit.ON_ANCIENT_CITY_MAPS, "filled_map.ancient_city", ClassTinkerers.getEnum(MapIcon.Type.class, "ANCIENT_CITY"), 12, 5);
+		SELL_ANCIENT_CITY_MAP_TRADE = new SellCustomMapTradeFactory(14, MainInit.ON_ANCIENT_CITY_MAPS, "filled_map.ancient_city", ClassTinkerers.getEnum(MapDecoration.Type.class, "ANCIENT_CITY"), 12, 5);
 
 		ALLOW_ICE_BOAT_SPEED = GameRuleRegistry.register("allowIceBoatSpeed", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false, (minecraftServer, booleanRule) -> {
             for (ServerPlayerEntity serverPlayerEntity : minecraftServer.getPlayerManager().getPlayerList()) {
@@ -126,8 +126,8 @@ public class MainInit implements ModInitializer {
             }
 		}));
 
-		HORSE_EXHAUSTED_MOD = new DynamicEntityAttributeModifier("Horse Exhaustion Debuff", EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
-		HORSE_SPRINT_MOD = new DynamicEntityAttributeModifier("Horse Sprint Buff", EntityAttributeModifier.Operation.MULTIPLY_BASE);
+		HORSE_EXHAUSTED_MOD = new DynamicEntityAttributeModifier("Horse Exhaustion Debuff", EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+		HORSE_SPRINT_MOD = new DynamicEntityAttributeModifier("Horse Sprint Buff", EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE);
 
 		HORSE_STAMINA = GameRuleRegistry.register(
 				"horseStaminaTicks",

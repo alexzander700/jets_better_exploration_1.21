@@ -1,13 +1,13 @@
 package dev.hugeblank.jbe.mixin.horse_armor;
 
+import net.minecraft.item.AnimalArmorItem;
 import net.minecraft.item.ArmorMaterials;
-import net.minecraft.item.HorseArmorItem;
 import net.minecraft.item.Item;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin(HorseArmorItem.class)
+@Mixin(AnimalArmorItem.class)
 public class HorseArmorItemMixin extends Item {
 
     @Shadow @Final private int bonus;

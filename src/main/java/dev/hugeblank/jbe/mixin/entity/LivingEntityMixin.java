@@ -35,7 +35,7 @@ public abstract class LivingEntityMixin extends Entity {
             if (horse.hasPassengers()) {
                 double level = (((double)args.get(2)/0.03f)-1.0f)/0.35;
                 args.set(2, 0.30+(level*0.105));
-                args.set(3, EntityAttributeModifier.Operation.MULTIPLY_BASE);
+                args.set(3, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE);
             }
         }
     }

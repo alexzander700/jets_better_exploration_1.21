@@ -6,7 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.item.map.MapIcon;
+import net.minecraft.item.map.MapDecoration;
 import net.minecraft.item.map.MapState;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.server.world.ServerWorld;
@@ -23,11 +23,11 @@ public class SellCustomMapTradeFactory implements TradeOffers.Factory {
     private final int price;
     private final TagKey<Structure> structure;
     private final String nameKey;
-    private final MapIcon.Type iconType;
+    private final MapDecoration.Type iconType;
     private final int maxUses;
     private final int experience;
 
-    public SellCustomMapTradeFactory(int price, TagKey<Structure> structure, String nameKey, MapIcon.Type iconType, int maxUses, int experience) {
+    public SellCustomMapTradeFactory(int price, TagKey<Structure> structure, String nameKey, MapDecoration.Type iconType, int maxUses, int experience) {
         this.price = price;
         this.structure = structure;
         this.nameKey = nameKey;
